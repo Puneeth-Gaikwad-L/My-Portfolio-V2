@@ -16,14 +16,15 @@
             padding: 0;
             box-sizing: border-box;
         }
-        html{
-            scroll-behavior: smooth;
-        }
+
         body {
             background-color: rgb(0, 0, 33);
             color: white;
             font-family: 'Poppins', sans-serif;
             padding-top: 80px;
+        }
+        html{
+            scroll-behavior: smooth;
         }
 
         nav {
@@ -377,8 +378,8 @@
             display: none;
         }
 
-        #pre-loader{
-            background:white url(images/0_mv8MNRLDNNnt5f72.gif) no-repeat center;
+        #pre-loader {
+            background: white url(images/0_mv8MNRLDNNnt5f72.gif) no-repeat center;
             background-size: 15%;
             height: 100vh;
             width: 100%;
@@ -397,6 +398,10 @@
                 width: 100vw;
             }
 
+            .firstSection>div {
+                width: 65%;
+            }
+
             .left {
                 font-size: 16px;
             }
@@ -404,9 +409,7 @@
             .leftsection {
                 font-size: 25px;
             }
-            .firstSection>div {
-                width: 65%;
-            }
+
             nav .fas {
                 display: block;
                 font-size: 25px;
@@ -498,6 +501,11 @@
                 font-size: 16px;
                 margin: 0 20px;
             }
+
+            #portfolio {
+                height: 135vh;
+            }
+
             .layer {
                 font-size: 10px;
             }
@@ -507,9 +515,6 @@
                 line-height: 40px;
                 width: 40px;
                 height: 40px;
-            }
-            #portfolio {
-                height: 135vh;
             }
 
             .contact-left img {
@@ -540,6 +545,11 @@
             .fotter p {
                 font-size: 10px;
             }
+        }
+        #msg{
+            color: #36ba1b;
+            margin-top: -60px;
+            display: block;
         }
     </style>
 </head>
@@ -591,7 +601,7 @@
         var typed = new Typed('#element', {
             strings: [' Web Designer', 'Coder', 'Web Developer', 'Software Developer'],
             typeSpeed: 80,
-            shuffle: false,
+            shuffle: true,
             loop: true,
             loopCount: Infinity,
         });
@@ -706,12 +716,13 @@
                 </div>
                 <div class="contact-right">
                     <h1 class="sub-title">Contact <span class="purple">Me</span></h1>
-                    <form>
+                    <form name="submit-to-google-sheet">
                         <input type="text" name="Name" placeholder="What is your good name" required>
-                        <input type="email" name="email" placeholder="What is your E-mail" required>
+                        <input type="email" name="Email" placeholder="What is your E-mail" required>
                         <textarea name="Message" rows="6" placeholder="What do you want to say"></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
                     </form>
+                    <span id="msg"></span>
                 </div>
             </div>
         </div>
@@ -743,10 +754,28 @@
     </section>
     <script>
         var loader = document.getElementById("pre-loader");
-        window.addEventListener("load", function(){
+        window.addEventListener("load", function () {
             loader.style.display = "none";
         });
     </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzvZOkHfbBaytT0mNFHQAX7KbC0ZYkmerDvchKeC5NQHAis36vZzWOgXbHeiMoPh4b3Xg/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                }, 5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 </body>
 
 </html>
