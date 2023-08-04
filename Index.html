@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puneeth Gaikwad L - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(0, 0, 33);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding-top: 80px;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(0, 0, 33);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+        }
+
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: rgb(188, 123, 248);
+            font-size: 1.04rem;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 80px 0;
+            height: 80vh;
+        }
+
+        .firstSection>div {
+            width: 40%;
+        }
+
+        .leftsection {
+            font-size: 2.5rem;
+
+        }
+
+        .rightSection img {
+            width: 90%;
+
+        }
+
+        .purple {
+            color: rgb(188, 123, 248);
+        }
+
+        #element {
+            color: rgb(188, 123, 248);
+        }
+
+        /*----------------------------------- About Section------------------------------- */
+        #about {
+            padding: 35px 0;
+            height: 100vh;
+            background-color: rgb(18, 18, 62);
+            ;
+        }
+
+        .container {
+            padding-top: 50px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .about-col-1 {
+            flex-basis: 35%;
+        }
+
+        .about-col-1 img {
+            width: 50%;
+            border-radius: 15px;
+            margin: 126px;
+        }
+
+        .about-col-2 {
+            flex-basis: 65%;
+        }
+
+        .sub-title {
+            font-size: 50px;
+            font-weight: 200;
+        }
+
+        .tab-titles {
+            display: flex;
+            margin: 20px 0 40px;
+        }
+
+        .tab-links {
+            margin-right: 50px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .tab-links::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            background: rgb(188, 123, 248);
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            transition: 0.5s;
+        }
+
+        .tab-links.active-link::after {
+            width: 50%;
+        }
+
+        .tab-contents ul li {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        .tab-contents ul li span {
+            color: #cf9cfe;
+            font-size: 14px;
+        }
+
+        .tab-contents {
+            display: none;
+        }
+
+        .tab-contents.active-tab {
+            display: block;
+        }
+
+        .tab-contents a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .tab-contents a:hover {
+            color: #890aff;
+        }
+
+        /*------------------------------------------- portfolio ---------------------------*/
+        #portfolio {
+            padding: 50px 70px;
+            height: 100vh;
+        }
+
+        .work-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+        }
+
+        .work {
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .work img {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .work:hover {
+            transform: scale(1.1);
+            transition: transform 0.5s;
+        }
+
+        .layer {
+            width: 100%;
+            height: 0;
+            background: linear-gradient(rgb(0, 0, 0, 0.6), #890aff);
+            border-radius: 10px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            text-align: center;
+            font-size: 14px;
+            transition: height 0.5s;
+        }
+
+        .layer h3 {
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .layer a {
+            margin-top: 20px;
+            color: #6600c5;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 60px;
+            background: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        .work:hover .layer {
+            height: 100%;
+        }
+
+        .btn {
+            display: block;
+            margin: 80px auto;
+            width: fit-content;
+            border: 1px solid #8737ff;
+            padding: 14px 50px;
+            border-radius: 40px;
+            text-decoration: none;
+            color: white;
+            transition: background 0.5s;
+        }
+
+        .btn:hover {
+            background: #890aff;
+        }
+
+        /*---------------------------------- Contact Me --------------------------------------------*/
+        #conatctMe {
+            height: 120vh;
+            background: rgb(18, 18, 62);
+        }
+
+        .contact-left {
+            flex-basis: 40%;
+            height: 100vh;
+        }
+
+        .contact-left img {
+            padding: 25px;
+            height: 110vh;
+        }
+
+        .contact-right {
+            flex-basis: 55%;
+        }
+
+        .btn.btn2 {
+            display: inline;
+            background: #890aff;
+        }
+
+        .contact-right form {
+            width: 80%;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            border: 0;
+            outline: none;
+            background: #310060;
+            padding: 15px;
+            margin: 15px 0;
+            color: white;
+            font-size: 18px;
+            border-radius: 6px;
+        }
+
+        form .btn2 {
+            padding: 14px 60px;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        /*---------------------------------- Socials ------------------------------------*/
+        #social-sec {
+            padding: 50px 50px;
+            margin-top: 70px;
+            background: rgb(0, 0, 33);
+        }
+
+        .Social-component {
+            border-bottom: 2px solid rgb(98, 0, 255);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social-flex {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            font-size: 30px;
+            margin-right: 15px;
+            color: aliceblue;
+            display: inline-block;
+            transition: transform 0.5s;
+        }
+
+        .social-icons a:hover {
+            color: #890aff;
+            transform: translateY(-5px);
+        }
+
+        .fotter {
+            width: 100%;
+            text-align: center;
+            padding: 30px 0;
+            font-weight: 300;
+            margin-top: 20px;
+            font-size: 11px;
+        }
+
+        .fotter i {
+            color: #a56dfa;
+            transition: transform 0.5s;
+        }
+
+        .fotter i:hover {
+            transform: translateY(-5px);
+        }
+
+        nav .fas {
+            display: none;
+        }
+
+        #pre-loader {
+            background: rgb(0, 0, 0) url(images/preloader.gif) no-repeat center;
+            background-size: 15%;
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            z-index: 100;
+        }
+
+        /*------------------------------------- media queries ------------------------------------*/
+        @media only screen and (max-width: 950px) {
+            .rightSection img {
+                width: 120%;
+            }
+
+            nav {
+                height: 50px;
+                width: 100vw;
+            }
+
+            .firstSection>div {
+                width: 65%;
+            }
+
+            .left {
+                font-size: 16px;
+            }
+
+            .leftsection {
+                font-size: 25px;
+            }
+
+            nav .fas {
+                display: block;
+                font-size: 25px;
+                padding-left: 10px;
+            }
+
+            .firstSection {
+                height: 100vh;
+                width: 100vw;
+            }
+
+            nav ul {
+                background: #a56dfa;
+                position: fixed;
+                top: 0;
+                right: -325px;
+                width: 325px;
+                height: 100vh;
+                padding-top: 50px;
+                z-index: 2;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                transition: right 0.5s;
+            }
+
+            .firstSection {
+                display: flex;
+                margin: 80px 0;
+                justify-content: space-evenly;
+                flex-direction: column-reverse;
+            }
+
+            .container {
+                padding-top: 0px;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 25px;
+
+            }
+
+            nav ul .fas {
+                position: absolute;
+                top: 25px;
+                left: 25px;
+                cursor: pointer;
+            }
+
+            .sub-title {
+                font-size: 40px;
+            }
+
+            .about-col-1,
+            .about-col-2 {
+                flex-basis: 100%;
+            }
+
+            .row {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .about-col-1 img {
+                display: none;
+            }
+
+
+            #about {
+                padding: 15px 0;
+                height: 80vh;
+                width: 100vw;
+                background-color: rgb(18, 18, 62);
+            }
+
+            .about-col-2 {
+                font-size: 10px;
+                margin: 5px 20px;
+            }
+
+            .tab-links {
+                font-size: 16px;
+                margin: 0 20px;
+            }
+
+            .tab-contents {
+                font-size: 16px;
+                margin: 0 20px;
+            }
+
+            #portfolio {
+                height: 135vh;
+            }
+
+            .layer {
+                font-size: 10px;
+            }
+
+            .layer a {
+                font-size: 14px;
+                line-height: 40px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .contact-left img {
+                height: 75vh;
+            }
+
+            #conatctMe {
+                height: 160vh;
+            }
+
+            .contact-left,
+            .contact-right {
+                flex-basis: 100%;
+            }
+
+            .contact-right {
+                margin-left: 50px;
+            }
+
+            .social-icons a {
+                font-size: 20px;
+            }
+
+            .Social-component {
+                flex-direction: column;
+            }
+
+            .fotter p {
+                font-size: 10px;
+            }
+        }
+        #msg{
+            color: #36ba1b;
+            margin-top: -60px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="pre-loader"></div>
+    <!-- -------------------------------------- headder -------------------------------------------- -->
+    <header id="header">
+        <nav>
+            <div class="left">Puneeth Gaikwad L</div>
+            <div class="right">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#conatctMe">Contact Me</a></li>
+                    <div class="fas"><i class="fa-solid fa-xmark" onclick="closemenu()"></i></div>
+                </ul>
+                <div class="fas"><i class="fa-solid fa-bars" onclick="openmenu()"></i></div>
+            </div>
+        </nav>
+    </header>
+    <!---------------------------------------- side window for media ------------------------------->
+    <script>
+        var sidemeu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemeu.style.right = "0";
+        }
+        function closemenu() {
+            sidemeu.style.right = "-325px";
+        }
+    </script>
+    <!------------------------------------ home body ----------------------->
+    <main>
+        <section class="firstSection">
+            <div class="leftsection">
+                Hi, I am <span class="purple">Puneeth</span>
+                <div>and I am a passionate</div>
+                <span id="element"></span>
+            </div>
+            <div class="rightSection">
+                <img src="images/Code typing.gif" alt="">
+            </div>
+        </section>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: [' Web Designer', 'Coder', 'Web Developer', 'Software Developer'],
+            typeSpeed: 80,
+            shuffle: true,
+            loop: true,
+            loopCount: Infinity,
+        });
+    </script>
+
+    <!------------------------------------- About section ------------------------------------------ -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/intro.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About <span class="purple">Me</span></h1>
+                    <p>I am 23 years old. Energetic and dedicated web developer with a strong foundation in
+                        HTML, CSS and Intermediaite DSA concepts. Passionate about creating visually appealing and
+                        user-friendly websites. Fast learner with a strong attention to detail and a commitment to
+                        delivering high-quality work. Seeking opportunities to contribute and grow in the web
+                        development industry.
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                            <li><span>Web development</span><br>Web app Development</li>
+                            <li><span>App Development</span><br>Building Android apps</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2018 - 2022</span><br>Graduate from Nitte Meenakshi Institute of Technology</li>
+                            <li><span>2022 - present</span><br>Web Development Course from AccioJob</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>03/2022 - 09/2022</span><br>Internship at<a href="https://www.acko.com/"> ACKO</a>
+                            </li>
+                            <li><span>08/2021 - 09/2021</span><br>Internship at<a href="https://hal-india.co.in/">
+                                    HAL</a></li>
+                            <li><span>06/2021 - 07/2021</span><br>Internship at<a href="https://www.festo.com/us/en/">
+                                    FESTO</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links")
+        var tabcontents = document.getElementsByClassName("tab-contents")
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <!--------------------------------------- Portfolio section ------------------------------------->
+    <section id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My <span class="purple">Work</span></h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work-1.jpg">
+                    <div class="layer">
+                        <h3>Simple Search Engine</h3>
+                        <p>Help the user to search the JavaTpoint website easily</p>
+                        <a href="https://github.com/Puneeth-Gaikwad-L/Simple-Search-Engine"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.jpg">
+                    <div class="layer">
+                        <h3>Snake and ladder</h3>
+                        <p>A gaming interface that consists of all the functions of Snake and ladder</p>
+                        <a href="https://github.com/Puneeth-Gaikwad-L/Snake-And-Ladder-"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-3.jpg">
+                    <div class="layer">
+                        <h3>Text Editor</h3>
+                        <p>Light and user friendly editor for text, consits all the features of a Text editor</p>
+                        <a href="https://github.com/Puneeth-Gaikwad-L/Text-Editor"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="https://github.com/Puneeth-Gaikwad-L?tab=repositories" class="btn">See More</a>
+        </div>
+    </section>
+    <!------------------------------------------------------------- contact Me ------------------------------------------------->
+    <section id="conatctMe">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <div class="Support-Img">
+                        <img src="images/support-63b02ad2.png">
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <h1 class="sub-title">Contact <span class="purple">Me</span></h1>
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="What is your good name" required>
+                        <input type="email" name="Email" placeholder="What is your E-mail" required>
+                        <textarea name="Message" rows="6" placeholder="What do you want to say"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <!-------------------------------------------------------------- Socials -------------------------------------------------->
+        <section id="social-sec">
+            <div class="Social-component">
+                <h1 class="sub-title">Socials </h1>
+                <div class="social-flex">
+                    <div class="social-icons">
+                        <a href="https://github.com/Puneeth-Gaikwad-L"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/puneeth_gaikwad"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <div class="social-icons">
+                        <a href="mailto:puneethgaikwadl@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/puneeth-gaikwad-l-1b1070213/"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----------------------------------------------------------- Fotter ---------------------------------------------------------->
+        <div class="fotter">
+            <p>Made with <i class="fa-solid fa-heart"></i> by Puneeth Gaikwad L</p>
+        </div>
+    </section>
+    <script>
+        var loader = document.getElementById("pre-loader");
+        window.addEventListener("load", function () {
+            loader.style.display = "none";
+        });
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzvZOkHfbBaytT0mNFHQAX7KbC0ZYkmerDvchKeC5NQHAis36vZzWOgXbHeiMoPh4b3Xg/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                }, 5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+
+</html>
